@@ -1,4 +1,4 @@
-# asd-ste100
+# asd-ste100 skill
 
 A Claude Code skill for writing, rewriting, and checking technical text against ASD-STE100 Simplified Technical English (Issue 9, 2025). It handles the procedural/descriptive split, verb-form restrictions, 20- and 25-word sentence limits, and the controlled-vocabulary approach that keeps maintenance documentation unambiguous.
 

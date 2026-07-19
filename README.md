@@ -1,25 +1,29 @@
-# asd-ste100 — Claude Code skill for ASD-STE100 Simplified Technical English
+# asd-ste100
 
-A Claude Code skill that helps write, rewrite, and check technical text against the ASD-STE100 (Issue 9) writing rules: procedural vs descriptive text types, approved verb forms, sentence limits, and the controlled-vocabulary principles.
+A Claude Code skill for writing, rewriting, and checking technical text against ASD-STE100 Simplified Technical English (Issue 9, 2025). It handles the procedural/descriptive split, verb-form restrictions, 20- and 25-word sentence limits, and the controlled-vocabulary approach that keeps maintenance documentation unambiguous.
 
 ## Disclaimer
 
-This is an **unofficial** study and writing aid. It is **not affiliated with, endorsed, or certified by ASD** (Aerospace, Security and Defence Industries Association of Europe) **or STEMG** (Simplified Technical English Maintenance Group).
+This is an unofficial study and writing aid. It has no affiliation with ASD (Aerospace, Security and Defence Industries Association of Europe) or the Simplified Technical English Maintenance Group (STEMG), and it is not certified by either.
 
-**ASD-STE100** is a registered trademark of ASD (EU Trade Mark No. 017966390).
+ASD-STE100 is a registered EU trademark (No. 017966390). This skill paraphrases the standard's rules for teaching purposes. It does not reproduce the specification text or the controlled dictionary in full. Download the official document, free, from asd-ste100.org.
 
-This skill summarizes the standard's rules in its own words for educational purposes. It does **not** reproduce the ASD-STE100 specification text or its controlled dictionary. For the authoritative standard, including the full dictionary of approved words, download the official document — free of charge — from the official website: **https://www.asd-ste100.org**
+No tool can guarantee STE compliance. The human writer signs off on the final text. ASD and STEMG recognize only STEMG members and UNINETTUNO-certified trainers for STE training.
 
-No tool, including this skill, can guarantee STE compliance. Final responsibility for STE-compliant text always rests with the human writer. ASD/STEMG recognize only STEMG members/partners and UNINETTUNO-certified trainers for STE training.
+## How the skill thinks about STE
 
-## Contents
+ASD-STE100 is a controlled natural language with two parts: 53 writing rules split into 9 sections, and a controlled dictionary of roughly 900 approved words where each word has one meaning and one part of speech. The rules force short sentences, active voice (with narrow exceptions), and direct commands in procedures. The dictionary blocks synonyms: `start` is approved, `begin` and `commence` are not.
 
-- `SKILL.md` — core workflow: classify text type, apply rules, transform and verify
-- `references/writing-rules.md` — the 9 rule sections in detail
-- `references/dictionary.md` — dictionary format, lookup technique, known word rulings
-- `references/checklist.md` — compliance checklist and common errors
-- `references/background.md` — history, governance, adoption, training, tools
+The standard was built in the 1980s because European airlines were translating maintenance manuals into four or five languages for non-native mechanics, and misunderstandings were causing real safety problems. It is still mandatory for ATA iSpec 2200 and S1000D documentation, and it shows up in defense, medical devices, and wind energy.
 
-## Installation
+## What's in the files
 
-Copy the `asd-ste100/` directory into `~/.claude/skills/`. Claude Code discovers it automatically.
+- `SKILL.md` — the workflow: classify text type, apply the rules, transform and verify
+- `references/writing-rules.md` — the 9 rule sections spelled out
+- `references/dictionary.md` — the 4-column dictionary format and how to look words up
+- `references/checklist.md` — a compliance pass and the most common mistakes
+- `references/background.md` — history, governance, Issue 9 changes, adoption
+
+## Install
+
+Drop the `asd-ste100/` directory into `~/.claude/skills/`. Claude Code picks it up without extra setup.

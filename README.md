@@ -26,4 +26,4 @@ The standard was built in the 1980s because European airlines were translating m
 
 ## Install
 
-Drop the `asd-ste100/` directory into `~/.claude/skills/`. Claude Code picks it up without extra setup.
+Drop the `asd-ste100/` directory into `~/.claude/skills/`. Claude Code or `~/.agents/skills/`. Codex/Opencode picks it up without extra setup.

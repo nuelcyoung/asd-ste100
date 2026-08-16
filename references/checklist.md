@@ -10,7 +10,23 @@ Use this file when reviewing text for STE compliance or doing a final pass on a 
 
 ### Words
 - [ ] Every word is approved, a technical noun/verb, or has been replaced with an approved alternative
+- [ ] Words verified against the official Part 2 dictionary (user's PDF), OR the fallback disclaimer is included in the deliverable
 - [ ] Each word used with its single approved meaning and part of speech
+
+### Part of speech (see `pos-analysis.md`)
+- [ ] Every content word tagged with its POS **in context** before lookup — occurrences ruled separately, not unique strings
+- [ ] Every lookup done with the POS marker (`check (n)`, `install (v)`); POS mismatch treated as a failure even when the string is in the dictionary
+- [ ] Sentence-initial imperatives tagged as verbs, not nouns ("Check the valve" — verb use of a noun-only word)
+- [ ] No nouns used as verbs (pressure, torque, service, position, sample)
+- [ ] Every past participle adjective traced to its base verb, and the base verb is approved or a declared technical verb ("required" ← `require`: fails)
+- [ ] Nominalizations ruled on their own, not inherited from an approved verb (`install` approved ≠ `installation` approved)
+- [ ] Every -ing modifier sits inside a declared technical noun
+- [ ] Findings reported as *word + POS + ruling*, never as a bare word
+- [ ] Terminology table built — one approved name per thing, used everywhere (no platform/application/system drift)
+- [ ] No vague quantifiers (many, several, some, various, numerous, few, most) — numbers given or word deleted
+- [ ] No subjective or unmeasurable wording (appropriate, relevant, regular, normal) — measurable criteria given instead
+- [ ] No judgment-based instructions ("use your judgment", "depends on") — "If X, do Y" decision rules given instead
+- [ ] Abstract nominalizations converted to verb phrases with an agent, or declared as technical nouns
 - [ ] American English spelling throughout
 - [ ] Terminology consistent — same object, same name, everywhere
 
@@ -42,25 +58,27 @@ Use this file when reviewing text for STE compliance or doing a final pass on a 
 - [ ] Each starts with a clear command or condition
 - [ ] Legal-controlled warning text flagged rather than silently rewritten
 
-## The 10 Most Common Writing Errors
+## The 11 Most Common Writing Errors
 
 1. Unapproved verb forms — progressive tenses, modals like "can" and "may"
 2. Sentences over the 20/25-word limits
-3. Non-approved words used when approved alternatives exist
-4. Passive voice in procedures
-5. Multi-word nouns longer than 3 words without prepositions
-6. Omitted subjects, verbs, or articles
-7. Topic sentences not at the start of paragraphs
-8. Mixed procedural and descriptive text types
-9. -ing forms used as verbs instead of as technical nouns
-10. Inconsistent terminology across the document
+3. Non-approved words used when approved alternatives exist — including vague quantifiers (many, several, some) and subjective wording (relevant, regular, correct)
+4. **Approved words used in the wrong part of speech** — `check` (noun only) written as a verb, nouns converted to verbs, and past participle adjectives built from non-approved verbs ("the required parts"). These survive a word-list check and fail a real review
+5. Passive voice in procedures
+6. Multi-word nouns longer than 3 words without prepositions
+7. Omitted subjects, verbs, or articles
+8. Topic sentences not at the start of paragraphs
+9. Mixed procedural and descriptive text types
+10. -ing forms used as verbs instead of as technical nouns
+11. Inconsistent terminology across the document
 
 ## Typical Workflow for Creating STE-Compliant Text
 
 1. **Pre-writing** — understand the task; identify procedural vs descriptive content
 2. **First draft** — write in standard technical English
 3. **Rule check** — apply all 53 writing rules systematically
-4. **Dictionary check** — verify each word is approved with the correct part of speech
+4. **POS tagging** — tag every content word with the part of speech it carries in its sentence; reduce participles, nominalizations, and -ing modifiers to their base forms (see `pos-analysis.md`)
+5. **Dictionary check** — verify each occurrence against the official Part 2 dictionary **with its POS marker** (see `dictionary-access.md`); fallback to known rulings with a disclaimer if no official copy is available
 5. **Restructure** — break long sentences, convert passive to active, simplify
 6. **Alternative selection** — replace non-approved words with approved alternatives
 7. **Technical terms** — add company glossary terms (technical nouns/verbs)

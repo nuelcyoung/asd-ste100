@@ -14,13 +14,17 @@ No tool can guarantee STE compliance. The human writer signs off on the final te
 
 ASD-STE100 is a controlled natural language with two parts: 53 writing rules split into 9 sections, and a controlled dictionary of roughly 900 approved words where each word has one meaning and one part of speech. The rules force short sentences, active voice (with narrow exceptions), and direct commands in procedures. The dictionary blocks synonyms: `start` is approved, `begin` and `commence` are not.
 
+The part-of-speech half of that rule is where checking usually goes wrong. The dictionary approves a word *for one part of speech*, so a word can be in the dictionary and still be a violation. `check` is approved as a noun, which makes "Check the dependencies" wrong and "Do a check of the dependencies" right. Past participles inherit their base verb's ruling, so "the required parts" fails because `require` is not an approved verb. The skill tags every word in context before it rules on it, rather than matching strings against a list.
+
 The standard was built in the 1980s because European airlines were translating maintenance manuals into four or five languages for non-native mechanics, and misunderstandings were causing real safety problems. It is still mandatory for ATA iSpec 2200 and S1000D documentation, and it shows up in defense, medical devices, and wind energy.
 
 ## What's in the files
 
-- `SKILL.md` — the workflow: classify text type, apply the rules, transform and verify
+- `SKILL.md` — the workflow: classify text type, apply the rules, verify words against the dictionary with their part of speech, transform and verify
 - `references/writing-rules.md` — the 9 rule sections spelled out
-- `references/dictionary.md` — the 4-column dictionary format and how to look words up
+- `references/pos-analysis.md` — part-of-speech tagging, derived-form rules (past participles, -ing forms, nominalizations, noun-to-verb conversion), and the POS traps a word-list check misses
+- `references/dictionary.md` — the 4-column dictionary format, known rulings, and the high-risk word pattern tables (vague quantifiers, subjective wording, nominalizations)
+- `references/dictionary-access.md` — how to verify words against the official Part 2 dictionary: obtaining the free official PDF, tiered access (local PDF / web fetch / fallback), per-word and bulk lookup procedures, terminology table format
 - `references/checklist.md` — a compliance pass and the most common mistakes
 - `references/background.md` — history, governance, Issue 9 changes, adoption
 

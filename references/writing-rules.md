@@ -18,6 +18,7 @@ Part 1 of the standard contains **53 writing rules organized in 9 sections**. Th
 
 - Use only approved words from the dictionary, technical nouns, and technical verbs.
 - Each approved word has ONE meaning and ONE part of speech (see `dictionary.md`).
+- The dictionary approves a word **for a part of speech**, so tag each word as used before ruling on it. `check` is in the dictionary as a noun; "Check the valve" is still a violation. Procedure and traps: `pos-analysis.md`.
 - Spelling follows **American English** per Merriam-Webster. Convert British forms: colour → color, centre → center.
 
 ## Section 2: Multi-word Nouns
@@ -39,6 +40,8 @@ Approved verb forms ONLY:
 | Simple past | installed |
 | Simple future | will install |
 | Past participle (as adjective only) | the installed component |
+
+**The participle must come from an approved verb.** "The installed component" is legal because `install` (v) is approved. "The required parts" is not legal, because `require` is not an approved verb — the participle inherits its base verb's ruling, and reading like a plain adjective does not exempt it. Reduce every participle to its infinitive and rule on that first; if it fails, use an approved adjective (`necessary`) or restructure. The same reduction applies to nominalizations: an approved verb does not approve its noun form.
 
 NOT allowed:
 

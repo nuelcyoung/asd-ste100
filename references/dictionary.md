@@ -29,6 +29,21 @@ Column 1 carries the part of speech for a reason: **the entry approves the word 
 - `require` — NOT approved. Use `necessary` (adj) or "you must have". This also blocks `required` as a participle adjective: "all required dependencies" fails, "all the necessary dependencies" passes.
 - `about` (prep) — "concerned with" ONLY. Not "approximately."
 - `close` (v) — exactly two meanings: (1) to move together to stop passage ("close the door"), (2) to operate a circuit breaker ("close the circuit"). NOT approved for "close a meeting" or "close a business."
+- `can` (v) — **approved**, "to be able to". This is the word the standard's own examples use: "TURN THE COVER UNTIL YOU **CAN** GET ACCESS TO THE JACKS." `may`, `might`, and `could` are NOT approved.
+- `must` (v) — **approved**, for obligation. `should`, `shall`, and `ought to` are NOT approved.
+
+Do not treat `can` and `must` as banned modals. They carry meaning, and deleting them changes what the sentence claims — a hedge becomes an absolute, a recommendation becomes a fact.
+
+## When No Approved Word Carries the Meaning
+
+A lookup that fails is not permission to take the nearest approved word. The moves, in order:
+
+1. Restructure the sentence so approved words carry the idea in a different shape.
+2. Use an approved verb phrase (`get access to`, `make sure that`, `find the cause of`).
+3. Declare a technical noun or verb from the project glossary and record it in the terminology table.
+4. Keep the accurate word and **flag it** in the deliverable with the reason.
+
+The substitution tables below tell you what a word means, not that a swap is safe. Run substitution safety on every replacement before you accept it: `meaning-fidelity.md`, Pass 2. `decrease` is not "lose". `stop` is not "fail". `find` is not "monitor".
 
 ## Derived Forms Do Not Inherit Approval
 
@@ -61,19 +76,35 @@ Patterns these illustrate:
 
 These patterns cause most real-world review failures — even in text with short, active sentences. This section is derived skill guidance, NOT a reproduction of the official dictionary. Verify rulings against the official source when available (see `references/dictionary-access.md`).
 
-### Vague quantifiers — give the number or delete
+### Vague quantifiers — give the number, delete, or use "more than one"
 
 | Avoid | STE handling |
 |---|---|
-| many, several, some, various, numerous, few, most | Give the exact number ("six services") or delete the word if the number does not matter |
+| many, much, several, some, various, numerous, few, most | Give the exact number ("six services") or delete the word if the number does not matter. When the count is variable by design (instances, replicas, microservices), neither move works — use "more than one" or state the mechanism. Do not swap "many" for another unverified word such as "multiple" |
+
+When the count is **variable by design** — application instances, replicas, microservices, users — neither move works, because there is no exact number and the plurality is the point. Use **"more than one"**: "The service operates on more than one instance." Do not swap `many` for "multiple" or "several"; that trades one unverified word for another and fixes nothing.
 
 ### Subjective / unmeasurable wording — give criteria
 
 | Avoid | STE handling |
 |---|---|
 | appropriate, relevant, regular, normal, correct (as in "the correct action") | Replace with a measurable condition: "at intervals of 100 h", "if the value is more than 5 bar" |
+| important, critical, essential, significant, urgent; bare comparatives ("is more important than") | Give the criterion or the priority level: "Give a sudden increase in response latency alert level 1. Give sustained high CPU use alert level 3." If the comparison stays, its hedge stays too ("can be more important than") |
 | judgment, "depends on" (as an instruction) | Never tell the reader to judge. Give the decision rule: "If X, do Y. If Y, do Z." |
 | "when conditions permit", "if possible" | State the condition measurably: "when a processing node is available" |
+
+### Vague predicates — name actor, condition, action
+
+| Avoid | STE handling |
+|---|---|
+| "have value", "be of importance", "cause a change", "give help", "have an effect" | Replace with subject–verb–object statements that say who does what under which condition: "Act on an alert only when it shows a condition that you need to correct." Verify every replacement word against the dictionary |
+
+### Collocation traps — do not break recognized pairings
+
+| Avoid | STE handling |
+|---|---|
+| Synonym swaps inside fixed technical pairings: "fast increase" for "sudden increase"; "data decrease" for "data loss" | Keep the standard pairing and verify its words against the dictionary, or declare the pairing a technical noun. A pairing broken by individually-approved words still fails review |
+| Wrong prepositions inside pairings: "an increase of latency" | Use the pairing's preposition: "an increase IN response latency"; spatial containment: "instances IN different availability zones", not "on availability zones" |
 
 ### Abstract nominalizations — use verbs or technical nouns
 

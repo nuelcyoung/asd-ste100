@@ -4,6 +4,8 @@ STE's core rule is "one word, one meaning, **one part of speech**." A word-list 
 
 Never rule on a word in isolation. Tag it as used in its sentence, then look it up with that tag.
 
+**A failed ruling tells you to fix the sentence. It does not authorize a swap.** This file finds violations; it does not choose replacements. Every substitution it leads to must first pass substitution safety in `meaning-fidelity.md`: the source word's meaning in context must equal the replacement's approved meaning. When a word fails and no approved word carries the meaning, restructure the sentence, declare a technical term, or keep the word and flag it. Taking the nearest approved word is how a POS-clean rewrite ends up stating something false.
+
 ## The Rule
 
 A word passes only if **all three** match the dictionary entry:

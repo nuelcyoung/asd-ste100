@@ -28,6 +28,16 @@ Part 1 of the standard contains **53 writing rules organized in 9 sections**. Th
   - Bad: "main landing gear shock absorber assembly"
   - Better: "shock absorber assembly of the main landing gear"
 
+**The 3-word limit is a ceiling, not a target.** Do not dismantle legal 2- and 3-word clusters into `of`-chains — that makes the text longer and heavier than the source without making it clearer.
+
+| Over-corrected | Correct | Words in cluster |
+|---|---|---|
+| "the times of the database queries" | "the database query times" | 3 — legal |
+| "the errors of the application" | "the application errors" | 2 — legal |
+| "the failures of the dependencies" | "the dependency failures" | 2 — legal |
+
+Test: count the words in the cluster. Three or fewer and unambiguous → keep it. Four or more, or ambiguous → use the preposition.
+
 ## Section 3: Verbs
 
 Approved verb forms ONLY:
@@ -43,32 +53,45 @@ Approved verb forms ONLY:
 
 **The participle must come from an approved verb.** "The installed component" is legal because `install` (v) is approved. "The required parts" is not legal, because `require` is not an approved verb — the participle inherits its base verb's ruling, and reading like a plain adjective does not exempt it. Reduce every participle to its infinitive and rule on that first; if it fails, use an approved adjective (`necessary`) or restructure. The same reduction applies to nominalizations: an approved verb does not approve its noun form.
 
+**Modals: `can` and `must` are approved. The others are not.**
+
+| Approved | Meaning | Non-approved | Handling |
+|---|---|---|---|
+| `can` (v) | to be able to — "you **can** get access to the jacks" | may, might, could | Use `can`, or state the condition explicitly |
+| `must` (v) | obligation — "you **must** have the necessary parts" | should, shall, ought to | Use `must`, or the imperative in procedures |
+| `will` | simple future | would | Rewrite in simple present, or use `can` |
+
+`can` and `must` carry meaning. Deleting them from a source sentence changes the claim: a hedged statement becomes an absolute one, or a recommendation becomes a fact. That is a Rule 0 violation (`meaning-fidelity.md`), not a simplification.
+
 NOT allowed:
 
-- **Modal verbs**: can, could, may, might, should, would — none are approved
+- **Non-approved modals**: may, might, could, should, would, shall
 - **Complex auxiliary constructions**: "must be installing" → "install"
 - **Progressive tenses** in any form
 - **-ing forms as verbs** — they cause ambiguity. Permitted ONLY as:
   - Technical nouns (e.g., "the opening")
   - Modifiers within technical nouns
-- Use **active voice**. In procedures, passive is forbidden. In descriptions, passive is allowed only when the agent is genuinely unknown.
+- Use **active voice**. In procedures, passive is forbidden. In descriptive writing, use the active voice *as much as possible* (Rule 3.5) — the passive is allowed when the agent is unknown, when the agent is unimportant, or when the active voice would force you to name an agent the source never named. **Never invent an agent to escape the passive.** If every sentence in a passage needs a fabricated subject, the passage is procedural in disguise: reclassify it and use the imperative.
 
 ## Section 4: Sentences
 
 - **Procedural texts: maximum 20 words per sentence.**
 - **Descriptive texts: maximum 25 words per sentence.**
+- Meet the limits by **splitting** sentences, never by deleting content. If a sentence will not fit, ask which proposition needs its own sentence — not which words can go.
 - Do not omit sentence parts: keep the subject, the verb, and articles (a, an, the).
+- **Correct articles, not just present ones.** Uncountable nouns take no `a`/`an` ("high CPU use", not "a high CPU use"). A generic class takes no `the` ("application errors increase", not "the errors of the application increase"). Choose one treatment for mass nouns such as `data` and record it in the terminology table.
 - Use **vertical lists** for complex information and sequences.
 - Put **conditions first**: "If X, do Y" — not "Do Y if X."
 
 ## Section 5: Descriptive Writing
 
 - Explains how things work, what happened, why something occurs.
-- Active voice preferred; passive only when the agent is unknown.
+- Active voice as much as possible; the passive is allowed when the agent is unknown or unimportant. Never invent an agent to avoid it.
 - Maximum 25 words per sentence.
 - One topic per paragraph; topic sentence at the START of the paragraph.
 - Maximum 6 sentences per paragraph.
 - May use descriptive statements and notes.
+- **Vary sentence length and construction (Rule 6.5).** Descriptive writing must stay readable. Three consecutive sentences on the same frame ("The teams must…", "The teams must…") is a rule violation, not a neutral style choice — and it is the standard signature of a machine rewrite. Mix constructions: a conditional, a vertical list, a short sentence after two longer ones.
 
 ## Section 6: Procedural Writing
 
@@ -92,7 +115,8 @@ NOT allowed:
 
 - Watch recurring error patterns (see `checklist.md`).
 - Maintain **consistent terminology** throughout a document — the same object gets the same name every time.
-- Keep sentence constructions simple and parallel.
+- Keep sentence constructions simple. **Simple is not the same as identical**: consistent terminology applies to the *names of things*, not to sentence shape. Repeating one sentence frame across a paragraph breaks Rule 6.5.
+- Accuracy outranks vocabulary. A sentence of approved words that states something false is a worse failure than a flagged non-approved word. See `meaning-fidelity.md`.
 
 ## Procedures vs Descriptions — Decision Guide
 

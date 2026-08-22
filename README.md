@@ -1,5 +1,7 @@
 # asd-ste100 skill
 
+[![Skills Playground](https://skillsplayground.com/badges/installs/asd-ste100.svg)](https://skillsplayground.com/skills/asd-ste100/)
+
 A Claude Code skill for writing, rewriting, and checking technical text against ASD-STE100 Simplified Technical English (Issue 9, 2025). It handles the procedural/descriptive split, verb-form restrictions, 20- and 25-word sentence limits, and the controlled-vocabulary approach that keeps maintenance documentation unambiguous.
 
 ## Disclaimer

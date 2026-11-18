@@ -1,0 +1,14 @@
+{
+  "name": "asd-ste100",
+  "displayName": "ASD-STE100 Simplified Technical English",
+  "version": "0.5.0",
+  "description": "Write, rewrite, and check technical text against ASD-STE100 Simplified Technical English (Issue 9, 2025): writing rules, part-of-speech-aware dictionary checks, and meaning-fidelity safeguards.",
+  "author": {
+    "name": "Nuel Young Chukwunalu",
+    "url": "https://github.com/nuelcyoung"
+  },
+  "homepage": "https://github.com/nuelcyoung/asd-ste100",
+  "repository": "https://github.com/nuelcyoung/asd-ste100",
+  "license": "MIT",
+  "keywords": ["ste", "asd-ste100", "simplified-technical-english", "technical-writing", "controlled-language", "documentation", "s1000d", "aerospace"]
+}

@@ -9,7 +9,7 @@
     {
       "name": "asd-ste100",
       "source": "./",
-      "description": "Write, rewrite, and check technical text against ASD-STE100 Simplified Technical English (Issue 9, 2025).",
+      "description": "Write, rewrite, and check technical text against ASD-STE100 Simplified Technical English.",
       "category": "writing"
     }
   ]

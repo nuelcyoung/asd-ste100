@@ -35,4 +35,23 @@ The standard was built in the 1980s because European airlines were translating m
 
 ## Install
 
+### Claude Code plugin (recommended)
+
+Inside a Claude Code session (v2.1.275 or later):
+
+```
+/plugin install asd-ste100 --marketplace nuelcyoung/asd-ste100
+```
+
+Or from your shell:
+
+```bash
+claude plugin marketplace add nuelcyoung/asd-ste100
+claude plugin install asd-ste100@nuelcyoung
+```
+
+Update later with `claude plugin update asd-ste100@nuelcyoung`.
+
+### Manual
+
 Drop the `asd-ste100/` directory into `~/.claude/skills/`. Claude Code or `~/.agents/skills/`. Codex/Opencode picks it up without extra setup.

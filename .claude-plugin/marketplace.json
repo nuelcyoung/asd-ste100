@@ -1,0 +1,16 @@
+{
+  "name": "nuelcyoung",
+  "description": "Claude skills and plugins by Nuel Young",
+  "owner": {
+    "name": "Nuel Young Chukwunalu",
+    "url": "https://github.com/nuelcyoung"
+  },
+  "plugins": [
+    {
+      "name": "asd-ste100",
+      "source": "./",
+      "description": "Write, rewrite, and check technical text against ASD-STE100 Simplified Technical English.",
+      "category": "writing"
+    }
+  ]
+}
